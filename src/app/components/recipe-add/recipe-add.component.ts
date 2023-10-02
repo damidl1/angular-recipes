@@ -2,16 +2,19 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from 'src/app/services/data.service';
 import { Recipe } from 'src/app/model/recipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-add',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,
+            FormsModule],
   templateUrl: './recipe-add.component.html',
   styleUrls: ['./recipe-add.component.scss']
 })
 export class RecipeAddComponent {
 
+  nameRecipe: string = '';
 
   constructor(private dataServ: DataService){}
 

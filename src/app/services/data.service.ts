@@ -23,4 +23,8 @@ export class DataService {
   postRecipe(newRecipe: Recipe): Observable<Recipe>{
     return this.http.post<Recipe>(this.DB_URL, newRecipe, {headers: {'content-type':'application/json'}})
   }
+
+  deleteRecipe(recipeId: string): Observable<Recipe>{
+   return this.http.delete<Recipe>(this.DB_URL + '/' + recipeId);
+  }
 }
